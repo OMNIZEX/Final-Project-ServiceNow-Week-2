@@ -1,0 +1,32 @@
+.navbar {
+    transition: background-color 0.4s ease, padding 0.4s ease;
+}
+
+.navbar.scrolled {
+    background-color: #051922;
+    padding: 25px 0;
+}
+
+.navbar .nav-link {
+    color: white;
+    transition: color 0.4s ease;
+}
+
+.navbar-nav .nav-link.active {
+    color: #fd7e14;
+}
+
+@media (max-width: 991px) {
+    .navbar-icons {
+        justify-content: flex-start;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
+}
+
+footer {
+    background: #051922;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+}
