@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitkha - Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assets/css/style.css">
+    <style>
+        body { background-color: #f5f5f5; }
+        .auth-card { max-width: 450px; border-radius: 15px; border: none; box-shadow: 0 0 20px rgba(0,0,0,0.1); }
+        .btn-orange { background-color: #F28123; color: white; font-weight: 700; border-radius: 50px; }
+        .btn-orange:hover { background-color: #d36e1a; color: white; }
+    </style>
+</head>
+<body>
+    
+    <nav class="top-header-area navbar navbar-expand-lg fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a href="#">
+                <img src="assests/img/logo.png" style="width:200px">
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2 active" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">About</a></li>
+                </ul>
+            </div>
+
+            <ul class="d-flex align-items-center list-unstyled mb-0 ms-3">
+                <li class="me-3"><a href="#"><img src="assests/img/search.png" width="25"></a></li>
+                <li class="me-3"><a href="#"><img src="assests/img/heart.png" width="25"></a></li>
+                <li class="me-3"><a href="Profile_page.html"><img src="assests/img/user.png" width="25"></a></li>
+            </ul>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                style="background-color:#fd7e14; border:none;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+    <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
+        <div class="card auth-card p-4 w-100">
+            <div class="text-center mb-4">
+                <h2 class="auth-title" style="color: #051922; font-weight: 800;">Register</h2>
+                <div class="underline mx-auto" style="width: 50px; height: 2px; background: #F28123;"></div>
+            </div>
+            <form id="registerForm">
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Full Name</label>
+                    <input type="text" class="form-control" id="regName" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Email Address</label>
+                    <input type="email" class="form-control" id="regEmail" required>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label fw-bold">Password</label>
+                    <input type="password" class="form-control" id="regPass" required>
+                </div>
+                <div class="mb-4">
+                    <label class="form-label fw-bold">Confirm Password</label>
+                    <input type="password" class="form-control" id="regConfirmPass" required>
+                </div>
+                <button type="submit" class="btn btn-orange w-100 py-2">Register</button>
+            </form>
+            <p class="text-center mt-3">Already have an account? <a href="Login_page.html" style="color: #F28123;">Login</a></p>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="./assets/js/auth.js"></script>
+</body>
+</html>
