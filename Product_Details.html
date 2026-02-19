@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruitkha - Checkout</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="./assests/css/style.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="top-header-area navbar navbar-expand-lg fixed-top">
+        <div class="container d-flex align-items-center justify-content-between">
+
+            <a href="index.html">
+                <img src="assests/img/logo.png" style="width:200px">
+            </a>
+
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2 active" href="index.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">About</a></li>
+                </ul>
+            </div>
+
+            <ul class="d-flex align-items-center list-unstyled mb-0 ms-3">
+                <li class="me-3"><a href="#"><img src="assests/img/search.png" width="25"></a></li>
+                <li class="me-3"><a href="#"><img src="assests/img/heart.png" width="25"></a></li>
+                <li class="me-3"><a href="Profile_page.html"><img src="assests/img/user.png" width="25"></a></li>
+            </ul>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                style="background-color:#fd7e14; border:none;">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+        </div>
+    </nav>
+
+    <!-- Product Detail Hero img  -->
+    <div class="checkout-hero text-center">
+        <div class="container">
+            <p class="text-orange fw-bold tracking-wide mb-2">FRESH AND ORGANIC</p>
+            <h1 class="display-4 fw-bold text-white">Product Detail</h1>
+        </div>
+    </div>
+
+    <div class="container my-5 pt-5">
+        <div class="row align-items-center">
+            <div class="col-md-5 mb-4 mb-md-0">
+                <div class="product-image-wrapper p-4 text-center">
+                    <img src="assests/img/Green Apple.jpg" alt="Product" id="productImage" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <div class="col-md-7">
+                <div class="product-details">
+                    <h2 id="productTitle" class="fw-bold text-dark-custom">Green apples</h2>
+                    <p class="text-muted mb-2">Per Kg</p>
+                    <h3 id="productPrice" class="fw-bold mb-3 text-dark-custom">$50</h3>
+                    
+                    <p id="productDesc" class="text-muted mb-4 line-height-lg">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dicta sint dignissimos, rem commodi cum voluptatem quae reprehenderit repudiandae ea tempora incidunt ipsa, quisquam animi perferendis eos eum modi! Tempora, earum.
+                    </p>
+                    
+                    <div class="d-flex align-items-center mb-4">
+                        <input type="number" id="productQuantity" class="form-control me-3 text-center" value="1" min="1" style="width: 80px;">
+                        <button class="btn btn-orange px-4 py-2" onclick="addToCartFromDetails()">
+                            Add to Cart
+                        </button>
+                        <button class="btn btn-orange px-4 py-2 ms-2" onclick="addToFavourites()">
+                            <img src="assests/img/heart.png" width="20" alt="Heart Icon"> 
+                        </button>
+                    </div>
+                    
+                    <p class="mb-2"><strong class="text-dark-custom">Categories:</strong> <span class="text-muted" id="productCategory">Fruits, Organic</span></p>
+                    
+                    <div class="share-icons mt-3">
+                        <strong class="text-dark-custom d-block mb-2">Share:</strong>
+                        <a href="#" class="text-dark-custom me-3"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-dark-custom me-3"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="text-dark-custom me-3"><i class="fab fa-google-plus-g"></i></a>
+                        <a href="#" class="text-dark-custom"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container my-5 pt-5 border-top">
+        <div class="text-center mb-5">
+            <h2 class="fw-bold text-dark-custom"><span class="text-orange">Related</span> Products</h2>
+            <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid, fuga quas</p>
+        </div>
+        
+        <div class="row" id="relatedProductsContainer">
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100 text-center border-0 shadow-sm p-3">
+                    <img src="assests/img/Strawberry.jpg" class="card-img-top w-75 mx-auto mt-3" alt="Strawberry">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark-custom">Strawberry</h5>
+                        <p class="text-muted mb-1">Per Kg</p>
+                        <h4 class="fw-bold mb-3 text-dark-custom">85$</h4>
+                        <div class="d-flex justify-content-center align-items-center gap-2 mt-auto">
+                            <button class="btn btn-orange w-50"><i class="fas fa-shopping-cart me-2"></i> Add to Cart</button>
+                            <button class="btn btn-orange w-25 d-flex align-items-center justify-content-center" onclick="addToFavourites()">
+                                <img src="assests/img/heart.png" width="20" alt="Heart Icon"> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100 text-center border-0 shadow-sm p-3">
+                    <img src="assests/img/Grapes.jpg" class="card-img-top w-75 mx-auto mt-3" alt="Berry">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark-custom">Grapes</h5>
+                        <p class="text-muted mb-1">Per Kg</p>
+                        <h4 class="fw-bold mb-3 text-dark-custom">70$</h4>
+                        <div class="d-flex justify-content-center align-items-center gap-2 mt-auto">
+                            <button class="btn btn-orange w-50"><i class="fas fa-shopping-cart me-2"></i> Add to Cart</button>
+                            <button class="btn btn-orange w-25 d-flex align-items-center justify-content-center" onclick="addToFavourites()">
+                                <img src="assests/img/heart.png" width="20" alt="Heart Icon"> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card product-card h-100 text-center border-0 shadow-sm p-3">
+                    <img src="assests/img/Lemon.jpg" class="card-img-top w-75 mx-auto mt-3" alt="Lemon">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title fw-bold text-dark-custom">Lemon</h5>
+                        <p class="text-muted mb-1">Per Kg</p>
+                        <h4 class="fw-bold mb-3 text-dark-custom">35$</h4>
+                        <div class="d-flex justify-content-center align-items-center gap-2 mt-auto">
+                            <button class="btn btn-orange w-50"><i class="fas fa-shopping-cart me-2"></i> Add to Cart</button>
+                            <button class="btn btn-orange w-25 d-flex align-items-center justify-content-center" onclick="addToFavourites()">
+                                <img src="assests/img/heart.png" width="20" alt="Heart Icon"> 
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script src="assests/js/main.js"></script>
+</body>
+</html>

@@ -85,3 +85,85 @@ body {
   padding: 2px 12px;
   font-size: 0.8rem;
 }
+/*Checkout Page*/
+.bg-dark-custom {
+  background-color: #051922;
+}
+.text-orange {
+  color: #f28123;
+}
+.bg-light-gray {
+  background-color: #f5f5f5;
+}
+
+/* Checkout Hero Section */
+.checkout-hero {
+  background-color: #082a3a;
+  padding: 120px 0;
+}
+.tracking-wide {
+  letter-spacing: 2px;
+}
+
+/* Accordion Customization */
+.accordion-item {
+  border-radius: 5px;
+  overflow: hidden;
+}
+.accordion-button:not(.collapsed) {
+  color: #051922;
+  background-color: #f5f5f5;
+  box-shadow: none;
+}
+.accordion-button:focus {
+  box-shadow: none;
+}
+
+/* Order Table Customization */
+.order-details-table {
+  border-color: #eee;
+}
+.order-details-table th,
+.order-details-table td {
+  padding: 15px;
+  vertical-align: middle;
+}
+.order-details-table tbody tr {
+  background-color: white;
+}
+/* Product Details Page */
+/* Text Colors */
+.text-dark-custom { color: #051922 !important; }
+
+/* Product Image Box */
+.product-image-wrapper {
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+}
+
+/* Typography Tweaks */
+.line-height-lg {
+    line-height: 1.8;
+}
+
+/* Product Cards (For Shop & Related Products) */
+.product-card {
+    transition: 0.3s ease-in-out;
+    border-radius: 10px !important;
+}
+.product-card:hover {
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
+}
+.product-card .btn-orange {
+    border-radius: 50px;
+    padding: 8px 20px;
+}
+
+/* Social Share Icons Hover */
+.share-icons a {
+    transition: 0.3s;
+}
+.share-icons a:hover {
+    color: #F28123 !important;
+}
