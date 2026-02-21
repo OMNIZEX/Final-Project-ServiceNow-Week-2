@@ -58,7 +58,7 @@ if (loginForm) { // Only run if we are on the login page
         // Validation: Check if user exists and passwords match
         if (savedUser && savedUser.email === email && savedUser.password === pass) {
             localStorage.setItem('isLoggedIn', 'true'); // Save login session
-            window.location.href = 'index.html'; // Redirect to home
+            window.location.href = 'home.html'; // Redirect to home
         } else {
             alert("Invalid Email or Password!");
         }
@@ -66,29 +66,32 @@ if (loginForm) { // Only run if we are on the login page
 }
 // --- PROFILE PAGE LOGIC ---
 
-// Function to load and display user data
-function loadUserProfile() {
-    // 1. Find the specific HTML elements where the data will go
-    const nameDisplay = document.getElementById('userNameDisplay');
-    const emailDisplay = document.getElementById('userEmailDisplay');
+function displayRecentOrders() {
+    const ordersList = document.getElementById('ordersList');
+    
+    if (!ordersList) return;
 
-    // 2. Only run this logic if these elements exist (meaning we are on the Profile page)
-    if (nameDisplay && emailDisplay) {
-        
-        // 3. Retrieve the saved user string from LocalStorage and parse it back into an object
-        const savedUser = JSON.parse(localStorage.getItem('fruitkhaUser'));
+    // Get real orders from localStorage (the same array used in checkout)
+    let orders = JSON.parse(localStorage.getItem('myOrders')) || [];
 
-        // 4. Check if the user is actually logged in
-        if (savedUser) {
-            // DOM Manipulation: Change the text inside the HTML tags to match the saved data
-            nameDisplay.innerText = savedUser.name;
-            emailDisplay.innerText = savedUser.email;
-        } else {
-            // Security measure: If someone tries to visit profile.html without logging in, kick them out
-            alert("You must be logged in to view your profile.");
-            window.location.href = 'Login_page.html';
-        }
+    // If no orders, show message
+    if (orders.length === 0) {
+        ordersList.innerHTML = '<tr><td colspan="4" class="text-center text-muted">No recent orders found.</td></tr>';
+        return;
     }
+
+    // Use .map() to generate table rows dynamically
+    const ordersHTML = orders.map(order => {
+        return `
+            <tr>
+                <td class="fw-bold">${order.orderId}</td>
+                <td>${order.date}</td>
+                <td class="fw-bold text-dark-custom">$${order.total.toFixed(2)}</td>
+            </tr>
+        `;
+    }).join('');
+
+    ordersList.innerHTML = ordersHTML;
 }
 
 // Function to handle logging out (This is triggered by the onclick="logout()" in your HTML)
@@ -104,46 +107,6 @@ function logout() {
 
 // Run the function automatically as soon as the script loads
 loadUserProfile();
-
-// Function to display the user's order history
-function displayRecentOrders() {
-    // 1. Find the table body element where rows will be injected
-    const ordersList = document.getElementById('ordersList');
-    
-    // 2. Safety check: Only run if the table exists (meaning we are on profile.html)
-    if (!ordersList) return; 
-
-    // 3. Get orders from LocalStorage. 
-    // If none exist, we provide a dummy array to demonstrate the .map() method
-    let orders = JSON.parse(localStorage.getItem('fruitkhaOrders')) || [
-        { id: '#1042', date: '05/02/2026', status: 'Delivered', total: 85.00 },
-        { id: '#1043', date: '10/02/2026', status: 'Processing', total: 120.50 }
-    ];
-
-    // 4. Handle the case where the user has zero orders
-    if (orders.length === 0) {
-        ordersList.innerHTML = '<tr><td colspan="4" class="text-center text-muted">No recent orders found.</td></tr>';
-        return;
-    }
-
-    // 5. Technical Rule: Array Method .map()
-    const ordersHTML = orders.map(order => {
-        // Simple logic to change the color of the status pill
-        let statusColor = order.status === 'Delivered' ? 'bg-success' : 'bg-warning text-dark';
-
-        return `
-            <tr>
-                <td class="fw-bold">${order.id}</td>
-                <td>${order.date}</td>
-                <td><span class="badge ${statusColor} rounded-pill px-3 py-2">${order.status}</span></td>
-                <td class="fw-bold text-dark-custom">$${order.total.toFixed(2)}</td>
-            </tr>
-        `;
-    }).join(''); // 6. Turn the array of HTML strings into one single block of text
-
-    // 7. Technical Rule: DOM Manipulation
-    ordersList.innerHTML = ordersHTML;
-}
 
 // Update your existing loadUserProfile() to call this new function!
 function loadUserProfile() {
