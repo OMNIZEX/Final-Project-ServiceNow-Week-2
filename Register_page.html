@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fruitkha - Register</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./assests/css/style.css">
+   <link rel="stylesheet" href="./assests/css/style.css">
+    <link rel="stylesheet" href="./assests/css/style2.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
     
@@ -13,24 +15,24 @@
     <nav class="top-header-area navbar navbar-expand-lg fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
-            <a href="index.html">
+            <a href="#">
                 <img src="assests/img/logo.png" style="width:200px">
             </a>
 
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
-                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2 active" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Shop</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Cart</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">Contact</a></li>
-                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="home.html">Home</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="shop.html">Shop</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2 " href="cart.html">Cart</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="contact.html">Contact</a></li>
+                    <li class="nav-item"><a class="nav-link fw-bold fs-5 mx-2" href="about.html">About</a></li>
                 </ul>
             </div>
 
             <ul class="d-flex align-items-center list-unstyled mb-0 ms-3">
-                <li class="me-3"><a href="#"><img src="assests/img/search.png" width="25"></a></li>
-                <li class="me-3"><a href="#"><img src="assests/img/heart.png" width="25"></a></li>
-                <li class="me-3"><a href="Profile_page.html"><img src="assests/img/user.png" width="25"></a></li>
+                <li class="me-3"><a href="search.html"><img src="assests/img/search.png" width="25"></a></li>
+                <li class="me-3"><a href="favourite.html"><img src="assests/img/heart.png" width="25"></a></li>
+                <li><a href="Profile_page.html"><img src="assests/img/user.png" width="25"></a></li>
             </ul>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -41,6 +43,18 @@
         </div>
     </nav>
 
+    <section class="page-header py-5 d-flex align-items-center">
+        <div class="container text-center">
+            <div class="row">
+                <div class="col-lg-8 offset-lg-2">
+                    <div class="header-text">
+                        <p class="text-orange fw-bold text-uppercase ls-3 mb-2">Fresh and Organic</p>
+                        <h1 class="display-3 fw-bold text-white mb-0">Register</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
     <!-- Register Form Content -->
      <main>
     <div class="container d-flex justify-content-center align-items-center" style="min-height: calc(100vh - 80px);">
@@ -71,14 +85,89 @@
             <p class="text-center mt-3">Already have an account? <a href="Login_page.html" style="color: #F28123;">Login</a></p>
         </div>
     </div>
+
      </main>
 
-     <footer>
-        Copyrights © 2026 - Nada Saad / Abdalaziz Hosam, All Rights Reserved.
-        <br>Distributed By - Themewagon
+     <footer class="main-footer py-5 mt-5 text-white">
+        <div class="container py-4">
+            <div class="row g-4 text-center text-md-start">
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="fw-bold mb-4 position-relative pb-2 footer-title">About us</h4>
+                    <p class="text-secondary small pe-lg-4 lh-lg">
+                        Ut enim ad minim veniam perspiciatis unde omnis iste natus error sit voluptatem accusantium
+                        doloremque laudantium.
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="fw-bold mb-4 position-relative pb-2 footer-title">Get in Touch</h4>
+                    <ul class="list-unstyled text-secondary small">
+                        <li class="mb-3">34/8, East Hukupara, Gifirtok, Sadan.</li>
+                        <li class="mb-3">support@fruitkha.com</li>
+                        <li>+00 111 222 3333</li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="fw-bold mb-4 position-relative pb-2 footer-title">Pages</h4>
+                    <ul class="list-unstyled footer-links small">
+                        <li class="mb-2"><a href="home.html" class="text-secondary text-decoration-none"><i
+                                    class="fas fa-chevron-right me-2 text-orange d-none d-md-inline"></i> Home</a></li>
+                        <li class="mb-2"><a href="shop.html" class="text-secondary text-decoration-none"><i
+                                    class="fas fa-chevron-right me-2 text-orange d-none d-md-inline"></i> Shop</a></li>
+                        <li class="mb-2"><a href="cart.html" class="text-secondary text-decoration-none"><i
+                                    class="fas fa-chevron-right me-2 text-orange d-none d-md-inline"></i> Cart</a></li>
+                        <li class="mb-2"><a href="contact.html" class="text-secondary text-decoration-none"><i
+                                    class="fas fa-chevron-right me-2 text-orange d-none d-md-inline"></i> Contact</a>
+                        </li>
+                        <li class="mb-2"><a href="about.html" class="text-secondary text-decoration-none"><i
+                                    class="fas fa-chevron-right me-2 text-orange d-none d-md-inline"></i> About</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6">
+                    <h4 class="fw-bold mb-4 position-relative pb-2 footer-title">Subscribe</h4>
+                    <p class="text-secondary small mb-4">Subscribe to our mailing list to get the latest updates.</p>
+                    <form class="subscribe-form d-flex shadow-sm">
+                        <input type="email"
+                            class="form-control border-0 bg-dark-blue text-white shadow-none rounded-start py-3"
+                            placeholder="Email">
+                        <button type="submit" class="btn btn-orange border-0 rounded-end px-3">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+
+        <hr class="border-secondary opacity-25 mt-5 mb-0">
+
+        <div class="copyright-area py-4 bg-dark-bg">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-md-12 text-center text-md-start small text-secondary">
+                        Copyrights © 2026 - <span class="text-orange">Imran Hossain</span>, All Rights Reserved.
+                    </div>
+                    <div class="col-md-12 text-center text-md-start small text-secondary">
+                        Distributed By - <span class="text-orange">Themewagon</span>
+                    </div>
+                    <div class="col-md-6 text-center text-md-end mt-3 mt-md-0">
+                        <div class="social-links">
+                            <a href="#" class="text-white mx-2"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#" class="text-white mx-2"><i class="fab fa-twitter"></i></a>
+                            <a href="#" class="text-white mx-2"><i class="fab fa-instagram"></i></a>
+                            <a href="#" class="text-white mx-2"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </footer>
-    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
     <script src="assests/js/auth.js"></script>
+
 </body>
 </html>

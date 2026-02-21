@@ -13,7 +13,7 @@
 </head>
 
 <body>
-    <!-- Navigation Bar -->
+
     <nav class="top-header-area navbar navbar-expand-lg fixed-top">
         <div class="container d-flex align-items-center justify-content-between">
 
@@ -51,90 +51,94 @@
                 <div class="col-lg-8 offset-lg-2">
                     <div class="header-text">
                         <p class="text-orange fw-bold text-uppercase ls-3 mb-2">Fresh and Organic</p>
-                        <h1 class="display-3 fw-bold text-white mb-0">Checkout</h1>
+                        <h1 class="display-3 fw-bold text-white mb-0">Cart</h1>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- Checkout  -->
-    <div class="container my-5 py-4">
-        <div class="row">
-            <div class="col-lg-8 mb-5 mb-lg-0">
-                <div class="accordion" id="checkoutAccordion">
-                    <div class="accordion-item border-0 mb-3 bg-light-gray">
-                        <h2 class="accordion-header" id="headingOne">
-                            <button class="accordion-button bg-transparent fw-bold text-dark" type="button"
-                                data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
-                                aria-controls="collapseOne">
-                                <i class="fas fa-check-circle text-orange me-2"></i> Billing Address
-                            </button>
-                        </h2>
-                        <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
-                            data-bs-parent="#checkoutAccordion">
-                            <div class="accordion-body">
-                                <form id="checkoutForm">
-                                    <div class="row">
-                                        <div class="col-md-6 mb-3">
-                                            <input type="text" class="form-control" id="billName"
-                                                placeholder="Full Name" required>
-                                        </div>
-                                        <div class="col-md-6 mb-3">
-                                            <input type="email" class="form-control" id="billEmail"
-                                                placeholder="Email Address" required>
-                                        </div>
-                                        <div class="col-12 mb-3">
-                                            <input type="text" class="form-control" id="billAddress"
-                                                placeholder="Full Address" required>
-                                        </div>
-                                        <div class="col-12 mb-3">
-                                            <input type="tel" class="form-control" id="billPhone"
-                                                placeholder="Phone Number" required>
-                                        </div>
-                                    </div>
-                                </form>
-                            </div>
-                        </div>
+
+    <section class="cart-section py-5 my-5">
+        <div class="container">
+            <div class="row g-4 text-center text-lg-start">
+
+                <div class="col-lg-8">
+                    <div class="table-responsive shadow-sm rounded">
+                        <table class="table table-bordered align-middle text-center mb-0">
+                            <thead class="bg-light">
+                                <tr class="text-secondary">
+                                    <th scope="col" class="p-4 border-0"></th>
+                                    <th scope="col" class="p-4 border-0">Product Image</th>
+                                    <th scope="col" class="p-4 border-0">Name</th>
+                                    <th scope="col" class="p-4 border-0">Price</th>
+                                    <th scope="col" class="p-4 border-0">Quantity</th>
+                                    <th scope="col" class="p-4 border-0">Total</th>
+                                </tr>
+                            </thead>
+                            <tbody id="cartTableBody">
+                                <tr>
+                                    <td class="p-3">
+                                        <button class="btn btn-outline-danger btn-sm border-0"><i
+                                                class="far fa-times-circle fs-5"></i></button>
+                                    </td>
+                                    <td class="p-3">
+                                        <img src="assests/img/product-img-1.jpg" alt="strawberry" width="50">
+                                    </td>
+                                    <td class="p-3 fw-bold text-dark">Strawberry</td>
+                                    <td class="p-3">$85</td>
+                                    <td class="p-3">
+                                        <input type="number"
+                                            class="form-control mx-auto text-center shadow-none border-light-subtle"
+                                            value="1" min="1" style="width: 70px;">
+                                    </td>
+                                    <td class="p-3 fw-bold text-dark">1</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="card border-0 shadow-sm overflow-hidden">
+                        <table class="table mb-0">
+                            <thead class="bg-light border-0 text-start">
+                                <tr>
+                                    <th class="p-3 border-0">Total</th>
+                                    <th class="p-3 border-0 text-end">Price</th>
+                                </tr>
+                            </thead>
+                            <tbody class="text-start">
+                                <tr>
+                                    <td class="p-3 text-muted fw-bold border-0">Subtotal:</td>
+                                    <td id="subtotalPrice" class="p-3 text-end fw-bold border-0">$0</td>
+                                </tr>
+                                <tr>
+                                    <td class="p-3 text-muted fw-bold border-0">Shipping:</td>
+                                    <td class="p-3 text-end fw-bold border-0">$45</td>
+                                </tr>
+                                <tr class="border-top">
+                                    <td class="p-3 text-muted fw-bold border-0">Total:</td>
+                                    <td id="totalPrice" class="p-3 text-end fw-bold text-dark fs-5 border-0">$0</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
 
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="table-responsive">
-                    <table class="table table-bordered order-details-table">
-                        <thead class="bg-light-gray">
-                            <tr>
-                                <th class="py-3 fw-bold border-bottom-0">Your order Details</th>
-                                <th class="py-3 fw-bold border-bottom-0 text-end">Price</th>
-                            </tr>
-                        </thead>
-                        <tbody id="orderDetailsBody">
-                        </tbody>
-                        <tfoot class="bg-white">
-                            <tr>
-                                <td class="fw-bold">Subtotal</td>
-                                <td id="orderSubtotal" class="text-end fw-bold">$0</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-bold">Shipping</td>
-                                <td class="text-end fw-bold">$45</td>
-                            </tr>
-                            <tr>
-                                <td class="fw-bold">Total</td>
-                                <td id="orderTotal" class="fw-bold text-end">$0</td>
-                            </tr>
-                        </tfoot>
-                    </table>
+                    <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                        <button onclick="resetCart()"
+                            class="btn btn-orange rounded-pill px-4 py-3 fw-bold flex-grow-1 shadow-sm border-0">Reset
+                            Cart</button>
+                        <a href="Checkout_page.html"
+                            class="btn btn-orange rounded-pill px-4 py-3 fw-bold flex-grow-1 shadow-sm border-0 text-white text-decoration-none">
+                            Check Out
+                        </a>
+                    </div>
                 </div>
 
-                <div class="mt-4">
-                    <button class="btn btn-orange px-5 py-3 fw-bold w-100" onclick="processCheckout()">
-                        Place Order
-                    </button>
-                </div>
             </div>
         </div>
-    </div>
+    </section>
+
     <footer class="main-footer py-5 mt-5 text-white">
         <div class="container py-4">
             <div class="row g-4 text-center text-md-start">
@@ -213,9 +217,7 @@
             </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="assests/js/script.js"></script>
 </body>
 

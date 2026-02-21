@@ -1,169 +1,380 @@
+/* ==========================================================================
+   ROOT VARIABLES & GLOBAL COLORS
+   ========================================================================== */
+:root {
+    --orange: #fd7e14;
+    --dark-blue: #051922;
+    --input-bg: #0d212b;
+}
+
+/* ==========================================================================
+   NAVBAR STYLES
+   ========================================================================== */
 .navbar {
-  transition:
-    background-color 0.4s ease,
-    padding 0.4s ease;
+    transition: background-color 0.4s ease, padding 0.4s ease;
 }
 
 .navbar.scrolled {
-  background-color: #051922;
-  padding: 25px 0;
+    background-color: var(--dark-blue);
+    padding: 25px 0;
 }
 
 .navbar .nav-link {
-  color: white;
-  transition: color 0.4s ease;
+    color: white;
+    transition: color 0.4s ease;
 }
 
 .navbar-nav .nav-link.active {
-  color: #fd7e14;
+    color: var(--orange);
 }
 
+/* Responsive adjustments for navbar icons */
 @media (max-width: 991px) {
-  .navbar-icons {
-    justify-content: flex-start;
-    margin-top: 10px;
-    flex-wrap: wrap;
-  }
+    .navbar-icons {
+        justify-content: flex-start;
+        margin-top: 10px;
+        flex-wrap: wrap;
+    }
 }
 
-footer {
-  background: #051922;
-  color: white;
-  text-align: center;
-  padding: 20px 0;
-}
-/* General Body Styling */
-body {
-  background-color: #f5f5f5;
+/* ==========================================================================
+   HOME HERO SLIDER / CAROUSEL
+   ========================================================================== */
+.orange-text {
+    color: var(--orange);
+    letter-spacing: 0.2rem;
 }
 
-/* Auth Card for Login/Register */
-.auth-card {
-  max-width: 400px;
-  margin: 100px auto;
-  border-radius: 15px;
-  border: none;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+.btn-outline-orange {
+    border: 2px solid var(--orange);
+    color: #fff;
+    transition: 0.3s;
+}
+
+.btn-outline-orange:hover {
+    background: var(--orange);
+    color: #fff;
+}
+
+.carousel-overlay {
+    background: rgba(5, 25, 34, 0.7);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.carousel-caption {
+    z-index: 2;
+    padding: 0 10%;
+    pointer-events: none;
+}
+
+.carousel-caption a {
+    pointer-events: auto;
+}
+
+.carousel-caption p,
+.carousel-caption h1,
+.carousel-caption div {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: 0.8s ease-in-out;
+}
+
+.active .carousel-caption p {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.active .carousel-caption h1 {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+.active .carousel-caption div {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.7s;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    z-index: 5;
+}
+
+/* ==========================================================================
+   SALE BANNER / DISCOUNT SECTION
+   ========================================================================== */
+.sale-banner-bg {
+    background: #f5f5f5 url('img/1.jpg') no-repeat left center / cover;
+}
+
+/* ==========================================================================
+   ABOUT SECTION
+   ========================================================================== */
+.ls-2 {
+    letter-spacing: 2px;
+}
+
+.about-img-wrapper {
+    max-height: 450px;
+}
+
+.hover-zoom {
+    transition: transform 0.5s ease;
+}
+
+.about-img-wrapper:hover .hover-zoom {
+    transform: scale(1.05);
+}
+
+/* ==========================================================================
+   PAGE HEADER (used in multiple pages)
+   ========================================================================== */
+.ls-3 {
+    letter-spacing: 3px;
+}
+
+.page-header {
+    background-color: #07212e;
+    opacity: 0.8;
+    width: 100%;
+    background-position: center;
+    height: 500px;
+    position: relative;
+}
+
+.page-header h1 {
+    font-size: 4.5rem;
+    line-height: 1.2;
+}
+
+@media (max-width: 768px) {
+    .page-header {
+        min-height: 300px;
+    }
+
+    .page-header h1 {
+        font-size: 3rem;
+    }
+
+    .ls-3 {
+        letter-spacing: 1px;
+    }
+}
+
+/* ==========================================================================
+   TEAM SECTION (About page)
+   ========================================================================== */
+.ls-1 {
+    letter-spacing: 1px;
+}
+
+.transition-img {
+    transition: transform 0.5s ease;
+}
+
+.team-card:hover .transition-img {
+    transform: scale(1.1);
+}
+
+.social-link {
+    width: 38px;
+    height: 38px;
+    background-color: var(--orange);
+    border-radius: 50%;
+    margin: 0 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.social-link:hover {
+    background-color: var(--dark);
+    transform: translateY(-5px);
+}
+
+.social-link img {
+    filter: brightness(0) invert(1);
+}
+
+/* ==========================================================================
+   CONTACT FORM STYLES
+   ========================================================================== */
+.form-control:focus {
+    border-color: var(--orange);
+    box-shadow: 0 0 0 0.25rem rgba(235, 113, 14, 0.693);
+}
+
+.icon-box {
+    font-size: 1.5rem;
+    min-width: 40px;
+}
+
+/* ==========================================================================
+   CART & CHECKOUT TABLES
+   ========================================================================== */
+.table tbody td {
+    color: #444;
+}
+
+.product-img img {
+    max-height: 150px;
+    object-fit: contain;
+}
+
+/* ==========================================================================
+   FOOTER STYLES
+   ========================================================================== */
+.main-footer {
+    background-color: var(--dark-blue);
+}
+
+.footer-title::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 30px;
+    height: 2px;
+    background-color: var(--orange);
+}
+
+.footer-links a {
+    transition: 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: var(--orange) !important;
+    padding-left: 5px;
+}
+
+.bg-dark-blue {
+    background-color: var(--input-bg);
+}
+
+.subscribe-form input::placeholder {
+    color: #55666d;
+}
+
+.social-links a i {
+    transition: 0.3s;
+}
+
+.social-links a:hover i {
+    color: var(--orange);
+}
+
+@media (max-width: 767px) {
+    .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+}
+
+/* ==========================================================================
+   PRODUCT CARDS (Home & Shop)
+   ========================================================================== */
+.product-card {
+    transition: all 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1) !important;
+}
+
+.product-img img {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.title-line {
+    width: 50px;
+    height: 2px;
+    background-color: #fd7e14;
+}
+
+.hover-gray:hover {
+    color: #495057 !important;
+    text-decoration: underline;
+}
+
+/* ==========================================================================
+   DISCOUNT & COUNTDOWN STYLES (Home)
+   ========================================================================== */
+.text-orange {
+    color: #fd7e14 !important;
+}
+
+.bg-orange {
+    background-color: #fd7e14 !important;
+}
+
+.text-muted {
+    color: #6c757d !important;
+}
+
+.border-orange {
+    border-color: #fd7e14 !important;
+}
+
+.text-dark-blue {
+    color: #051922;
 }
 
 .btn-orange {
-  background-color: #f28123;
-  color: white;
-  font-weight: 700;
-  border-radius: 50px;
+    background-color: #fd7e14;
+    color: white;
+    transition: 0.3s ease-in-out;
 }
 
 .btn-orange:hover {
-  background-color: #d36e1a;
-  color: white;
+    background-color: #051922;
+    color: #fd7e14;
+    transform: translateY(-3px);
 }
 
-.auth-title {
-  color: #051922;
-  font-weight: 800;
-}
-.profile-header {
-  background-color: #051922;
-  color: white;
-  padding: 40px 0;
-}
-.avatar-circle {
-  width: 100px;
-  height: 100px;
-  background: #eee;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 40px;
-  margin-bottom: 15px;
-}
-.status-pill {
-  background: #f28123;
-  color: white;
-  border-radius: 20px;
-  padding: 2px 12px;
-  font-size: 0.8rem;
-}
-/*Checkout Page*/
-.bg-dark-custom {
-  background-color: #051922;
-}
-.text-orange {
-  color: #f28123;
-}
-.bg-light-gray {
-  background-color: #f5f5f5;
+.tracking-wider {
+    letter-spacing: 2px;
 }
 
-/* Checkout Hero Section */
-.checkout-hero {
-  background-color: #374b56;
-  padding: 120px 0;
-}
-.tracking-wide {
-  letter-spacing: 2px;
-}
-
-/* Accordion Customization */
-.accordion-item {
-  border-radius: 5px;
-  overflow: hidden;
-}
-.accordion-button:not(.collapsed) {
-  color: #051922;
-  background-color: #f5f5f5;
-  box-shadow: none;
-}
-.accordion-button:focus {
-  box-shadow: none;
-}
-
-/* Order Table Customization */
-.order-details-table {
-  border-color: #eee;
-}
-.order-details-table th,
-.order-details-table td {
-  padding: 15px;
-  vertical-align: middle;
-}
-.order-details-table tbody tr {
-  background-color: white;
-}
-/* Product Details Page */
-/* Text Colors */
-.text-dark-custom { color: #051922 !important; }
-
-/* Product Image Box */
-.product-image-wrapper {
-    background-color: #ffffff;
-    border-radius: 5px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.05);
-}
-
-/* Typography Tweaks */
-.line-height-lg {
-    line-height: 1.8;
-}
-
-/* Product Cards (For Shop & Related Products) */
-.product-card {
-    transition: 0.3s ease-in-out;
-    border-radius: 10px !important;
-}
-.product-card:hover {
-    box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important;
-}
-.product-card .btn-orange {
-    border-radius: 50px;
-    padding: 8px 20px;
-}
-
-/* Social Share Icons Hover */
-.share-icons a {
+.countdown-box {
+    background: white;
     transition: 0.3s;
 }
-.share-icons a:hover {
-    color: #F28123 !important;
+
+.countdown-box:hover {
+    border-color: #051922 !important;
+    transform: scale(1.05);
 }
+
+/* ==========================================================================
+   PAGINATION STYLES (Shop)
+   ========================================================================== */
+.pagination .page-link {
+    border: 1px solid #dee2e6;
+    color: #6c757d;
+    transition: all 0.3s ease;
+}
+
+.pagination .page-item.active .page-link {
+    background-color: orange !important;
+    border-color: orange !important;
+    color: white;
+}
+
+.pagination .page-item.disabled .page-link {
+    background-color: #f8f9fa;
+    color: #ced4da;
+    cursor: not-allowed;
+}
+
+.pagination .page-link:hover:not(.disabled) {
+    background-color: #eee;
+    color: orange;
+}
+
