@@ -140,7 +140,7 @@ function displayCart() {
         tbody.innerHTML += `
             <tr>
                 <td class="p-3">
-                    <button class="btn btn-outline-dark btn-sm border-0" onclick="removeFromCart(${index})">X
+                    <button class="btn btn-outline-dark btn-sm border-0" onclick="removeFromCart(${index})">
                         <i class="far fa-times-circle fs-5 text-danger"></i>
                     </button>
                 </td>
